@@ -18,10 +18,14 @@
   ],
   "dependencies": {
     "@adiwajshing/baileys": "^3.3.1",
-    "qrcode-terminal": "^0.12.0",
-    "moment-timezone": "^0.5.32",
     "colors": "^1.4.0",
-    "mathjs": "^8.1.1"
+    "deepai": "^1.0.17",
+    "fluent-ffmpeg": "^2.1.2",
+    "mathjs": "^8.1.1",
+    "moment-timezone": "^0.5.32",
+    "qrcode-terminal": "^0.12.0",
+    "yt-search": "^2.7.3",
+    "ytdl-core": "^4.5.0"
   },
   "author": "ibnusyawall",
   "license": "ISC",
