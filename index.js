@@ -56,7 +56,7 @@ aex.on('CB:action,,call', async json => {
     aex.on('message-new', async message => {
         try {
             global.prefix;
-
+           if(message.key.global) return
             const from = message.key.remoteJid
             const isGroup = from.endsWith('@g.us')
             const type = Object.keys(message.message)[0]
