@@ -1,16 +1,17 @@
 const moment = require("moment-timezone")
 const fs = require("fs")
+const ffmpeg = require("fluent-ffmpeg")
+
 const time = moment().tz('Asia/Jakarta').format("HH:mm:ss")
 const { exec } = require("child_process")
-const { MessageType } = require("@adiwajshing/baileys")
+const { MessageType, Mimetype } = require("@adiwajshing/baileys")
 const { text, extendedText, contact, location, liveLocation, image, video, sticker, document, audio, product } = MessageType
-const yts = require("yts")
+const yts = require("yt-search")
 const ytdl = require("ytdl-core")
-const ffmpeg = require("fluent-ffmpeg")
 exports.run = async (bot, message, args, from) => {
-   let yutup = await yts(message.body(11));
+   let yutup = await yts(args[0]);
         yutup =yutup.all;
-        if(yutu.length < 1) return await bot.sendMessage(from, 'mohon maaf, audio' + message.body(11) + 'tidak ditemukan', text, quoted: message});
+        if(yutup.length < 1) return await bot.sendMessage(from, 'mohon maaf, audio' + message.body(11) + 'tidak ditemukan', text, {quoted: message});
         bot.sendMessage(from, 'Data ditemukan! tunggu sebentar, lagu sedang di unduh!', text, {quoted: message})
 
         let title = yutup[0].title.replace(' ', '+');
