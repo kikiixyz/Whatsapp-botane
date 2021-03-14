@@ -4,7 +4,9 @@ const time = moment().tz('Asia/Jakarta').format("HH:mm:ss")
 const { exec } = require("child_process")
 const { MessageType } = require("@adiwajshing/baileys")
 const { text, extendedText, contact, location, liveLocation, image, video, sticker, document, audio, product } = MessageType
-
+const yts = require("yts")
+const ytdl = require("ytdl-core")
+const ffmpeg = require("fluent-ffmpeg")
 exports.run = async (bot, message, args, from) => {
    let yutup = await yts(message.body(11));
         yutup =yutup.all;
