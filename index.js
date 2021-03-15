@@ -23,7 +23,10 @@ const callMessage = JSON.parse(fs.readFileSync('./call.json'))
 prefix = require("./config.json").prefix
 
 const client = new WAConnection()
-
+aex.on('CB:action,,call', async json => {
+        const penelpon = json[2][0][1].from;
+        client.sendMessage(penelpon, callMessage.txt + `\n@${penelpon.split('@')[0]}`, MessageType.text, {contextInfo:{"mentionedJid": penelpon}});
+});
 const availableCommands = new Set();
 
 fs.readdir("./commands", (e, files) => {
@@ -49,10 +52,7 @@ const starts = async aex => {
     fs.existsSync('./botane.json') && client.loadAuthInfo('./botane.json')
 
     aex.connect()
-aex.on('CB:action,,call', async json => {
-        const penelpon = json[2][0][1].from;
-        client.sendMessage(penelpon, callMessage.txt + `\n@${callerId.split('@')[0]}`, MessageType.text);
-});
+
     aex.on('message-new', async message => {
         try {
             global.prefix;
