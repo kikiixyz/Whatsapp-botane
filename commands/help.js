@@ -3,7 +3,7 @@ const { readdir } = require('fs')
 const { MessageType } = require("@adiwajshing/baileys")
 const { text, extendedText, contact, location, liveLocation, image, video, sticker, document, audio, product } = MessageType
 
-exports.run = (bot, message, args, from) => {
+exports.run = async (bot, message, args, body, from) => {
     let tmpFile = {}
     readdir(process.cwd() + '/commands', (err, files) => {
         if (err) throw err
