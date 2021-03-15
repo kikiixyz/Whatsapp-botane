@@ -3,7 +3,7 @@ const { text, extendedText, contact, location, liveLocation, image, video, stick
 
 const istimer = (ts) => require('moment-timezone').duration(moment() - moment(ts * 1000)).asSeconds()
 
-exports.run = (bot, message, args, from, id) => {
+exports.run = async (bot, message, args, body, from) => {
     bot.sendMessage(from, "🏓 PONG! • speed: ${istimer(message.messageTimestamp)}ms", text, { quoted: message });
 };
 
