@@ -9,7 +9,7 @@ const { text, extendedText, contact, location, liveLocation, image, video, stick
 const yts = require("yt-search")
 const ytdl = require("ytdl-core")
 exports.run = async (bot, message, args, from) => {
-   let yutup = await yts(args[0]);
+   let yutup = await yts(body.slice(12);
         yutup =yutup.all;
         if(yutup.length < 1) return await bot.sendMessage(from, 'mohon maaf, audio' + message.body(11) + 'tidak ditemukan', text, {quoted: message});
         bot.sendMessage(from, 'Data ditemukan! tunggu sebentar, lagu sedang di unduh!', text, {quoted: message})
