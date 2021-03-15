@@ -8,7 +8,7 @@ const { MessageType, Mimetype } = require("@adiwajshing/baileys")
 const { text, extendedText, contact, location, liveLocation, image, video, sticker, document, audio, product } = MessageType
 const yts = require("yt-search")
 const ytdl = require("ytdl-core")
-exports.run = async (bot, message, args, from) => {
+exports.run = async (bot, message, args, body, from) => {
    let yutup = await yts(body.slice(12);
         yutup =yutup.all;
         if(yutup.length < 1) return await bot.sendMessage(from, 'mohon maaf, audio' + message.body(11) + 'tidak ditemukan', text, {quoted: message});
