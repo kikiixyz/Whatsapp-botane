@@ -92,7 +92,7 @@ aex.on('CB:action,,call', async json => {
             console.log(availableCommands)
 
             if (availableCommands.has(argv))
-                require(`./commands/${argv}`).run(aex, message, args, from)
+                require(`./commands/${argv}`).run(aex, message,body, args, from)
         } catch (err) {
             throw err
         }
