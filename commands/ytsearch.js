@@ -4,7 +4,7 @@ const yts = require("yt-search")
 const { MessageType } = require("@adiwajshing/baileys")
 const { text, extendedText, contact, location, liveLocation, image, video, sticker, document, audio, product } = MessageType
 
-exports.run = async (bot, message, args, body,  from) => {
+exports.run = async (bot, message, args, body, from) => {
   const ms = body.slice(11)
 	var irama = await yts(ms)
 	var yutup = '';
