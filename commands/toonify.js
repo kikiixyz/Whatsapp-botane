@@ -6,7 +6,7 @@ const ffmpeg = require("fluent-ffmpeg")
 const istimer = (ts) => require('moment-timezone').duration(moment() - moment(ts * 1000)).asSeconds()
 const deepai = require('deepai');
 deepai.setApiKey('4ec4c7f4-63cd-457f-b244-7e12bba7ebde');
-exports.run = async (bot, message, args, from, id) => {
+exports.run = async (bot, message, args, body, from) => {
     try {
 		const medianye = await JSON.parse(JSON.stringify(message).replace('quotedM','m')).message.extendedTextMessage.contextInfo
         console.log(medianye)
