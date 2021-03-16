@@ -12,7 +12,7 @@ exports.run = async (bot, message, args, body, from) => {
             yutup += '> ' + video.title + ' - ' + video.url + '\n\n'
         });
 	await bot.sendMessage(from, yutup, MessageType.text, {quoted: message})}
-
+}
 exports.help = {
     name: "ytsearch",
     description: "yts",
